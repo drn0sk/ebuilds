@@ -1,11 +1,13 @@
-DEFINED_PHASES=compile configure install
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install unpack
 DESCRIPTION=An http client/server library
 EAPI=8
 HOMEPAGE=https://github.com/drn0sk/http_lib
+INHERIT=git-r3
 IUSE=+client +server +shared-libs static-libs
-KEYWORDS=~amd64 ~x86
 LICENSE=MIT
+PROPERTIES=live
 REQUIRED_USE=|| ( client server ) || ( shared-libs static-libs )
 SLOT=0
-SRC_URI=https://github.com/drn0sk/http_lib/archive/refs/tags/v1.4.tar.gz -> http_lib-1.4.tar.gz
+_eclasses_=git-r3	7b584b5dc33e3bc66ff5b9271bf41764
 _md5_=e8d22f7258de4c33b77bb7d5b52aaec7
