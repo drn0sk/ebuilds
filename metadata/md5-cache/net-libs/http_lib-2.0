@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install
+DESCRIPTION=An http client/server library
+EAPI=8
+HOMEPAGE=https://github.com/drn0sk/http_lib
+IUSE=+client +server +shared-libs static-libs
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+REQUIRED_USE=|| ( client server ) || ( shared-libs static-libs )
+SLOT=0
+SRC_URI=https://github.com/drn0sk/http_lib/archive/refs/tags/v2.0.tar.gz -> http_lib-2.0.tar.gz
+_md5_=e8d22f7258de4c33b77bb7d5b52aaec7
