@@ -12,7 +12,7 @@ command_args="-C ${CACHE_FILE} -L ${LOG_FILE} -H ${HTML_FILE} ${DIRECTORY}"
 command_args_background="-D -P ${pidfile}"
 
 start_pre () {
-	checkpath -d -m 0644 -o root:root "$(dirname "${CACHE_FILE}")" "$(dirname "${LOG_FILE}")"
+	checkpath -d -m 0755 -o root:root "$(dirname "${CACHE_FILE}")" "$(dirname "${LOG_FILE}")"
 	checkpath -f -m 0644 -o root:root "${HTML_FILE}"
 }
 
