@@ -15,7 +15,7 @@ else
 fi
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="0/1"
 IUSE="+client +server +shared-libs static-libs"
 REQUIRED_USE="
 	|| ( client server )
@@ -36,5 +36,5 @@ src_compile() {
 
 src_install() {
 	emake STATIC="$STATIC" SHARED="$SHARED" CLIENT="$CLIENT" SERVER="$SERVER" \
-		DESTDIR="${D}" prefix="/usr" libdir="\$(exec_prefix)/$(get_libdir)" install
+		DESTDIR="${D}" prefix="/usr" libdir="\$(exec_prefix)/$(get_libdir)" BUILD_DIR="$S" install
 }

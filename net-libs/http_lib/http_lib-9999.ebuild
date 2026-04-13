@@ -36,5 +36,5 @@ src_compile() {
 
 src_install() {
 	emake STATIC="$STATIC" SHARED="$SHARED" CLIENT="$CLIENT" SERVER="$SERVER" \
-		DESTDIR="${D}" prefix="/usr" libdir="\$(exec_prefix)/$(get_libdir)" install
+		DESTDIR="${D}" prefix="/usr" libdir="\$(exec_prefix)/$(get_libdir)" BUILD_DIR="$S" install
 }

@@ -10,4 +10,4 @@ PROPERTIES=live
 REQUIRED_USE=|| ( client server ) || ( shared-libs static-libs )
 SLOT=0
 _eclasses_=git-r3	7b584b5dc33e3bc66ff5b9271bf41764
-_md5_=e8d22f7258de4c33b77bb7d5b52aaec7
+_md5_=0cc3bdc3f8e5ba32ec2e441ff2b1b69e

@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+[ -z "${CACHE_FILE}" ] && CACHE_FILE=/var/cache/http_music_player/paths.cache
+[ -z "${LOG_FILE}" ] && LOG_FILE=/var/log/http_music_player/log
+[ -z "${HTML_FILE}" ] && HTML_FILE=/usr/share/http_music_player/http_music_player.html
+
+command="/usr/bin/http_music_player"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_args="-C ${CACHE_FILE} -L ${LOG_FILE} -H ${HTML_FILE}"
+[ -n "${PORT}" ] && command_args+=" -p ${PORT}"
+[ -n "${EXTRA_ARGS}" ] && command_args+=" ${EXTRA_ARGS}"
+command_args_background="-D -P ${pidfile}"
+
+start_pre () {
+	checkpath -d -m 0644 -o root:root "$(dirname "${CACHE_FILE}")" "$(dirname "${LOG_FILE}")"
+	checkpath -f -m 0644 -o root:root "${HTML_FILE}"
+}
+
+extra_stopped_commands="remove_log remove_cache"
+
+remove_log () {
+	[ -e "${LOG_FILE}" ] && rm "${LOG_FILE}"
+}
+
+remove_cache () {
+	[ -e "${CACHE_FILE}" ] && rm "${CACHE_FILE}"
+}

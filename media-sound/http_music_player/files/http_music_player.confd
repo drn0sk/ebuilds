@@ -1,0 +1,15 @@
+# cache file to use
+#CACHE_FILE=
+
+# log file to use
+#LOG_FILE=
+
+# html file to serve
+#HTML_FILE=
+
+# port to listen on
+# if not specified it will use the default compiled into http_lib
+#PORT=
+
+# any extra arguments to http_music_player
+#EXTRA_ARGS=
