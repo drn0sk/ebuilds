@@ -1,7 +1,6 @@
 # directory containing audio files to serve
 DIRECTORY=
 
-
 # cache file to use
 #CACHE_FILE=
 
