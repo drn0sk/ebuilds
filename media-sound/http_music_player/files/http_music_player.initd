@@ -6,7 +6,7 @@
 
 command="/usr/bin/http_music_player"
 pidfile="/run/${RC_SVCNAME}.pid"
-command_args="-C ${CACHE_FILE} -L ${LOG_FILE} -H ${HTML_FILE}"
+command_args="-C ${CACHE_FILE} -L ${LOG_FILE} -H ${HTML_FILE} ${DIRECTORY}"
 [ -n "${PORT}" ] && command_args+=" -p ${PORT}"
 [ -n "${EXTRA_ARGS}" ] && command_args+=" ${EXTRA_ARGS}"
 command_args_background="-D -P ${pidfile}"
