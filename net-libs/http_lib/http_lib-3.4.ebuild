@@ -5,17 +5,12 @@ EAPI=8
 
 DESCRIPTION="An http client/server library"
 HOMEPAGE="https://github.com/drn0sk/http_lib"
-
-if [[ "${PV}" == 9999 ]] ; then
-	EGIT_REPO_URI="https://github.com/drn0sk/http_lib.git"
-	inherit git-r3
-else
-	SRC_URI="https://github.com/drn0sk/http_lib/archive/refs/tags/v${PV}.tar.gz -> ${PF}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
-fi
+SRC_URI="https://github.com/drn0sk/http_lib/archive/refs/tags/v${PV}.tar.gz -> ${PF}.tar.gz"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="3"
+KEYWORDS="~amd64 ~x86"
+
 IUSE="+client +server +shared-libs static-libs"
 REQUIRED_USE="
 	|| ( client server )
